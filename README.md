@@ -1,4 +1,6 @@
-# expRess: Simple Expression Graphs in R
+# expRess
+
+Simple Expression Graphs in R
 
 ## Overview
 expRess allows you to generate simple expression graphs in R, like the ones you see when reasoning about [autodiff](https://en.wikipedia.org/wiki/Automatic_differentiation) and [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). 
