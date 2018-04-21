@@ -5,7 +5,8 @@ expRess allows you to generate simple expression graphs in R, like the ones you 
 For instance:
 
 ```R
-expression_graph(f_1(f_2(f_3(x_1, x_2), x_3), f_1(f_4(f_5(x_1), f_6(x_2), x_4)))) %>% DiagrammeR::render_graph()
+expression_graph(f_1(f_2(f_3(x_1, x_2), x_3), f_1(f_4(f_5(x_1), f_6(x_2), x_4)))) %>% 
+  DiagrammeR::render_graph()
 ```
 
 will generate:
