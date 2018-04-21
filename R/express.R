@@ -17,9 +17,10 @@ NULL
 #'
 #' @export
 #' @examples
-#' g <- expression_graph(f_1(f_2(f_3(x_1, x_2), x_3), f_1(f_4(f_5(x_1), f_6(x_2), x_4))))
+#' library(magrittr)
+#' g <- express(f_1(f_2(f_3(x_1, x_2), x_3), f_1(f_4(f_5(x_1), f_6(x_2), x_4))))
 #' g %>% DiagrammeR::render_graph()
-expression_graph <- function(expr, merge = TRUE, label_formatter = default_label_formatter) {
+express <- function(expr, merge = TRUE, label_formatter = default_label_formatter) {
   root <- ast_as_tree(rlang::enexpr(expr))
   root <- if(merge) merge_leaves_by_label(root) else root
   DiagrammeR::create_graph(
@@ -30,9 +31,9 @@ expression_graph <- function(expr, merge = TRUE, label_formatter = default_label
       ),
     edges_df = edges(root)
   ) %>%
-    add_global_graph_attrs('rankdir', 'LR', 'graph') %>%
-    add_global_graph_attrs('layout', 'dot', 'graph') %>%
-    add_global_graph_attrs('style', 'filled', 'node')
+    DiagrammeR::add_global_graph_attrs('rankdir', 'LR', 'graph') %>%
+    DiagrammeR::add_global_graph_attrs('layout', 'dot', 'graph') %>%
+    DiagrammeR::add_global_graph_attrs('style', 'filled', 'node')
 }
 
 default_label_formatter <- function(labels) {
