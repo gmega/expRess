@@ -1,0 +1,15 @@
+Package: expRess
+Type: Package
+Title: Simple Expression Graphs in R.
+Version: 0.1.0
+#Authors@R: person("Giuliano", "Mega", role = c("aut", "cre"), email = "giuliano.mega@gmail.com", comment = c(ORCID = "0000-0002-4994-2387"))
+Maintainer: Giuliano Mega <giuliano.mega@gmail.com>
+Description: expRess generates graphs from expressions in R.
+License: BSD
+Encoding: UTF-8
+Imports: dplyr (>= 0.7.4), DiagrammeR (>= 1.0.0), R6 (>= 2.2.2)
+Collate: 
+    'ast.R'
+    'expression_graph.R'
+    'packages.R'
+RoxygenNote: 6.0.1
