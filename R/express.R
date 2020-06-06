@@ -169,7 +169,7 @@ DNode <- R6::R6Class(
       direct_ids <- sapply(
         self$edges,
         function(x) x$nid
-      )
+      ) %>% as.integer
       tibble(
         from = rep(self$nid, length(self$edges)),
         to = direct_ids
